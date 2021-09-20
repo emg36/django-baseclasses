@@ -9,7 +9,6 @@ import datetime
 import django
 from django.db import models
 from django.conf import settings
-from django.utils.encoding import python_2_unicode_compatible
 from django.utils.functional import cached_property
 
 from next_prev import next_or_prev_in_order
@@ -112,7 +111,6 @@ class BaseSortedModel(models.Model):
         ordering = ('sort_order', 'pk')
 
 
-@python_2_unicode_compatible
 class BaseImageModel(BaseSortedModel):
     """Standard sorted image model, intended to be related to a
        parent object via ForeignKey."""
